@@ -1,0 +1,14 @@
+{
+    "author": [
+        "Devcat"
+    ],
+    "install_msg": "Thank you for downloading this cog.",
+    "name": "crypto",
+    "short": "Show crypto prices",
+    "description": "Show them crypto prices",
+    "tags": [
+        "tools"
+    ],
+    "requirements": [],
+    "hidden": false
+}
