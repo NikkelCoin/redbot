@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import urllib.request
 import json
+from redbot.core import commands
 
 
 class Crypto(commands.Cog):
