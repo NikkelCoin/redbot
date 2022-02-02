@@ -4,7 +4,7 @@ import urllib.request
 import json
 
 
-class Crypto:
+class Crypto(commands.Cog):
     """Crypto Price Cog (powered by coinmarketcap.com)"""
 
     def __init__(self, bot):
@@ -191,6 +191,3 @@ class Crypto:
                                + data[i]['percent_change_1h'] + "%)")
             i += 1
             rank += 1
-
-def setup(bot):
-    bot.add_cog(Crypto(bot))
