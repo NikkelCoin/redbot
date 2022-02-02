@@ -17,7 +17,7 @@ class Crypto(commands.Cog):
         url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        print('Bitcoin is priced $' + data['price'])
+        self.bot.say('Bitcoin is priced $' + data['price'])
                 
 
     @commands.command()
@@ -26,7 +26,7 @@ class Crypto(commands.Cog):
         url = "https://api.binance.com/api/v3/ticker/price?symbol=ADAUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        print('Cardano is priced $' + data['price'])
+        self.bot.say('Cardano is priced $' + data['price'])
 
     @commands.command()
     async def eth(self):
@@ -34,7 +34,7 @@ class Crypto(commands.Cog):
         url = "https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        print('Ethereum is priced $' + data['price'])
+        self.bot.say('Ethereum is priced $' + data['price'])
 
     @commands.command()
     async def top5(self):
