@@ -12,29 +12,29 @@ class Crypto(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def btc(self):
+    async def btc(self, ctx):
         """What is Bitcoin's live price"""
         url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        await self.bot.say('Bitcoin is priced $' + data['price'])
+        await ctx.send('Bitcoin is priced $' + data['price'])
                 
 
     @commands.command()
-    async def ada(self):
+    async def ada(self, ctx):
         """What is Cardano's live price"""
         url = "https://api.binance.com/api/v3/ticker/price?symbol=ADAUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        await self.bot.say('Cardano is priced $' + data['price'])
+        await ctx.send('Cardano is priced $' + data['price'])
 
     @commands.command()
-    async def eth(self):
+    async def eth(self, ctx):
         """What is Ethereum's live price"""
         url = "https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        await self.bot.say('Ethereum is priced $' + data['price'])
+        await ctx.send('Ethereum is priced $' + data['price'])
 
     @commands.command()
     async def top5(self):
