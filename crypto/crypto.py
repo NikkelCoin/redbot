@@ -14,138 +14,27 @@ class Crypto(commands.Cog):
     @commands.command()
     async def btc(self):
         """What is Bitcoin's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=5"
+        url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 5:
-            if data[i]['name'] == "Bitcoin":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
+        print('Bitcoin is priced $' + data['price'])
                 
 
     @commands.command()
     async def ada(self):
         """What is Cardano's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=5"
+        url = "https://api.binance.com/api/v3/ticker/price?symbol=ADAUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 5:
-            if data[i]['name'] == "Cardano":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
+        print('Cardano is priced $' + data['price'])
 
     @commands.command()
     async def eth(self):
         """What is Ethereum's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
+        url = "https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 5:
-            if data[i]['name'] == "Ethereum":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
-
-    @commands.command()
-    async def xrp(self):
-        """What is Ripple's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 5:
-            if data[i]['name'] == "Ripple":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
-
-    @commands.command()
-    async def bch(self):
-        """What is Bitcoin Cash's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 10:
-            if data[i]['name'] == "Bitcoin Cash":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
-
-    @commands.command()
-    async def ltc(self):
-        """What is Litecoins's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 10:
-            if data[i]['name'] == "Litecoin":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
-
-    @commands.command()
-    async def neo(self):
-        """What is NEO's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=15"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 10:
-            if data[i]['name'] == "NEO":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
-
-    @commands.command()
-    async def xrm(self):
-        """What is Monero's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=15"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 10:
-            if data[i]['name'] == "Monero":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " (" +
-                                   data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
-
-    @commands.command()
-    async def xlm(self):
-        """What is Stellar's live price"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=15"
-        response = urllib.request.urlopen(url)
-        data = json.loads(response.read().decode('utf-8'))
-        i = 0
-        while i < 10:
-            if data[i]['name'] == "Stellar":
-                await self.bot.say(data[i]['name'] + " is priced $" + data[i]['price_usd'] + " ("
-                                   + data[i]['percent_change_1h'] + "%)")
-                break
-            else:
-                i += 1
+        print('Ethereum is priced $' + data['price'])
 
     @commands.command()
     async def top5(self):
