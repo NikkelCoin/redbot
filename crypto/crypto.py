@@ -78,7 +78,7 @@ class Crypto(commands.Cog):
     @commands.command()
     async def top20(self):
         """Get top 20 prices from coinmarketcap"""
-        url = "https://api.coinmarketcap.com/v1/ticker/?limit=20"
+        url = "https://sandbox-api.coinmarketcap.com/v1/ticker/?limit=20?CMC_PRO_API_KEY=146c6685-f640-4b1d-806b-bf8b0c236976"
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
         i = 0
