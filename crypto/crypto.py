@@ -35,6 +35,14 @@ class Crypto(commands.Cog):
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
         await ctx.send('Ethereum is priced $' + data['price'])
+        
+    @commands.command()
+    async def luna(self, ctx):
+        """What is LUNA's live price"""
+        url = "https://api.binance.com/api/v3/ticker/price?symbol=LUNAUSDT"
+        response = urllib.request.urlopen(url)
+        data = json.loads(response.read().decode('utf-8'))
+        await ctx.send('LUNA is priced $' + data['price'])
 
     @commands.command()
     async def top5(self):
