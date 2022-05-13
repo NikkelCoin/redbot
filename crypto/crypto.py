@@ -43,6 +43,14 @@ class Crypto(commands.Cog):
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode('utf-8'))
         await ctx.send('LUNA is priced $' + data['price'])
+        
+    @commands.command()
+    async def sol(self, ctx):
+        """What is SOL's live price"""
+        url = "https://api.binance.com/api/v3/ticker/price?symbol=SOLUSDT"
+        response = urllib.request.urlopen(url)
+        data = json.loads(response.read().decode('utf-8'))
+        await ctx.send('SOL is priced $' + data['price'])
 
     @commands.command()
     async def top5(self):
